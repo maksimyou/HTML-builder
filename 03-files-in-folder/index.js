@@ -26,7 +26,7 @@ fs.readdir(folderPath, (err, files) => {
                 const size = stats.size / 1024;
                 result.push(`${nameFail}-${extension}-${size.toFixed(3)}kb`);
 
-                if (result.length === files.length) {
+                if (result.length === files.length-1) {
                     console.log(result.join('\n'));
                 }
             }
