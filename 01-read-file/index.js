@@ -3,13 +3,7 @@ const path = require('path');
 
 console.log(__filename);
 
-let stream = new fs.ReadStream(__filename);
-
+let stream = new fs.ReadStream(path.join(__dirname, 'text.txt'));
 stream.on('data', (chunk) => {
-
-    fs.readFile(path.join(__dirname, 'text.txt'),
-        'utf-8', (err, chunk) => {
-            if (err) throw err;
-            console.log(chunk);
-        })
+    console.log(chunk.toString());
 })
